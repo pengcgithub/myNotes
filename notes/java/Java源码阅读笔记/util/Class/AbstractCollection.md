@@ -19,6 +19,8 @@ AbstractCollection的主要作用：它实现了Collection接口中的大部分�
 
 ### size() ###
 
+*如果这个值大于Integer.MAX_VALUE，则返回Integer.MAX_VALUE的值*
+
 ### isEmpty() ###
 <pre>
     public boolean isEmpty() {
@@ -109,6 +111,52 @@ public boolean containsAll(Collection<?> c) {
 }
 </Pre>
 
+### addAll ###
+
+<pre>
+public boolean addAll(Collection<? extends E> c) {
+    boolean modified = false;
+    //循环集合，取出每个元素存入当前集合中
+    for (E e : c)
+        if (add(e))
+            modified = true;
+    return modified;
+}
+</pre>
+
+
+### removeAll ###
+
+<pre>
+public boolean removeAll(Collection<?> c) {
+    boolean modified = false;
+    Iterator<?> it = iterator();
+    //循环当前集合，判断当前循环的元素包含在指定的集合元素C中，那么就移除当前集合中的这个元素。
+    while (it.hasNext()) {
+        if (c.contains(it.next())) {
+            it.remove();
+            modified = true;
+        }
+    }
+    return modified;
+}
+</pre>
+
+### retainAll ###
+*保留collection中哪些也包含在指定collection的元素。换句话说，移除此collection种未包含在指定collection中的所有元素。*
+
+
+### clear ###
+
+<pre>
+public void clear() {
+    Iterator<E> it = iterator();
+    while (it.hasNext()) {
+        it.next();
+        it.remove();
+    }
+}
+</pre>
 
 ### toString ###
 
@@ -120,12 +168,18 @@ public String toString() {
 
     StringBuilder sb = new StringBuilder();
     sb.append('[');
+    //死循环
     for (;;) {
         E e = it.next();
         sb.append(e == this ? "(this Collection)" : e);
+        //如果没有下一个元素，那么就终止死循环。
         if (! it.hasNext())
             return sb.append(']').toString();
+
+        //疑问：此处为什么还需要再追加一个append('')呢？
         sb.append(',').append(' ');
     }
 }
+
+e == this ? "(this Collection)" : e    不能理解这句话的意思？
 </pre>
