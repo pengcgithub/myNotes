@@ -1,0 +1,10 @@
+解决eclipse显示jar源代码中文乱码问题 
+=============================================================================== 
+更改eclipse的两个设置： 
+
+1、windows->Preferences...打开"首选项"对话框，左侧导航树，导航到general->Workspace，右侧Text file encoding，选择Other，改变为UTF-8，以后新建立工程其属性对话框中的Text file encoding即为UTF-8。 
+2、windows->Preferences...打开"首选项"对话框，左侧导航树，导航到general->Content Types，右侧Context Types树，点开Text，选择Java Source File，在下面的Default encoding输入框中输入UTF-8，点Update，则设置Java文件编码为UTF-8。 
+
+更改完毕后，如果还是乱码，请重启eclipse。 
+
+该方法在eclipse Juno 版本测试通过。

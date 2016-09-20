@@ -1,0 +1,19 @@
+<head>
+<title>object</title>
+</head>
+
+<body>
+<div style="position:relative; height: 130px; width: 250px; float: left; border: solid 1px red;" >
+    <div style="height: 130px; float: left;" >
+        <object id="flash_show" width="250px" height="130px">
+						<param class="test1" name="data" value="1.swf">
+						<param value="high">
+						<param value="#FFFFFF">
+						<param name="wmode" value="transparent">
+						<embed class="test2" src="1.swf" wmode="transparent" quality="high" bgcolor="#FFFFFF" width="250px" height="130px" name="myMovieName" align="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" title="Adobe Flash Player">
+				</object>
+    </div>
+    <div style="left: 0; height: 130px; width: 250px; position:absolute; filter: alpha(opacity=0); opacity: 0; cursor:pointer" onclick="alert(111);">
+    </div>
+</div>
+</body>

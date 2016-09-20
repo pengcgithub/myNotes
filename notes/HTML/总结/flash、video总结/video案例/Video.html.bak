@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Video</title>
+    <link href="css/video-js.css" rel="stylesheet" type="text/css" merge="No"/>
+    <script src="js/video.js" merge="No" eraseble="true"></script>
+    <meta file src="images/video-js.swf"/>
+</head>
+
+<body>
+    <h3>Video</h3>
+    <div viewCk>
+        <video id="videoPlayer" class="video-js vjs-default-skin vjs-controls-enabled vjs-has-started vjs-paused vjs-user-inactive" style="" controls=controls preload="none" width="600" height="400"
+               poster="http://video-js.zencoder.com/oceans-clip.png"
+               data-setup="{}">
+            <source src="2.swf" type='video/mp4' />
+        </video>
+    </div>
+    <xmp codeCk>
+        <video id="videoPlayer" class="video-js vjs-default-skin vjs-controls-enabled vjs-has-started vjs-paused vjs-user-inactive" style="" controls=controls preload="none" width="600" height="400"
+               poster="http://video-js.zencoder.com/oceans-clip.png"
+               data-setup="{}">
+            <source src="CAT_HD.mp4" type='video/mp4' />
+        </video>
+    </xmp>
+
+    <div class="document">
+        <div>Document:</div>
+        <a href="https://github.com/videojs/video.js/blob/stable/docs/api/vjs.Player.md">API</a>
+        <a href="https://github.com/videojs/video.js/blob/stable/docs/guides/options.md">Options</a>
+        <a href="PopVideo.html">see PopVideo</a>
+        <h4>Tip</h4>
+        <p style="color:red;">Test Video in IE8, need Server! and need local mp4 file sometimes!</p>
+
+        <div>
+            <h4>play and stop</h4>
+            <pre>
+                videojs("videoPlayer").play();
+                videojs("videoPlayer").stop();
+            </pre>
+            <h4>fullscreen event</h4>
+            <pre>
+                videojs('videoPlayer').on('fullscreenchange',function(){
+                    if(videojs('videoPlayer').isFullScreen){
+                        videojs('videoPlayer').play();
+                    }
+                })
+            </pre>
+        </div>
+    </div>
+</body>
+</html>
