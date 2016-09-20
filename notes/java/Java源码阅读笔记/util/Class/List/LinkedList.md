@@ -12,15 +12,15 @@
 
 ## 正文 ##
 
-### 属性 ###
+### 1、属性 ###
 
 - transient int size = 0; 	//列表的长度
 - transient Node<E> first; 	//列表的第一个元素
 - transient Node<E> last;	//列表的最后一个元素
 
-### 构造函数 ###
+### 2、构造函数 ###
 
-### 内部类 ###
+### 3、内部类 ###
 
 <pre>
 private static class Node<E> {
@@ -35,6 +35,18 @@ private static class Node<E> {
     }
 }
 </pre>
+
+### 4、方法 ###
+
+#### addAll() ####
+
+<pre>
+Node<E> pred, succ
+pred : 指向当前操作的节点,相当于一个游标.
+succ : 标识插入的位置的点
+</pre>
+
+
 
 ## 参考资料 ##
 
