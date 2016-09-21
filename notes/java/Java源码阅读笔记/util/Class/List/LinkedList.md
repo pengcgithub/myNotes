@@ -39,11 +39,56 @@ private static class Node<E> {
 ### 4、方法 ###
 
 #### addAll() ####
-
+添加方法
 <pre>
 Node<E> pred, succ
 pred : 指向当前操作的节点,相当于一个游标.
-succ : 标识插入的位置的点
+succ : 标识插入的位置的节点
+
+public boolean addAll(int index, Collection<? extends E> c) {
+    //检查是否越界
+    checkPositionIndex(index);
+
+    //集合转换为数组，并判断如果数组为零的话则直接return false；
+    Object[] a = c.toArray();
+    int numNew = a.length;
+    if (numNew == 0)
+        return false;
+
+    //pred ： 此节点位置的后面插入新的节点
+    //succ ： 此节点的前面位置插入节点
+    Node<E> pred, succ;
+
+    //如果插入的下标等于集合的长度，则表示在集合末端插入元素
+    if (index == size) {	//最后一个节点
+        succ = null;
+        pred = last;
+    } else {
+        succ = node(index);
+        pred = succ.prev;
+    }
+
+    for (Object o : a) {
+        @SuppressWarnings("unchecked") E e = (E) o;
+        Node<E> newNode = new Node<>(pred, e, null);
+        if (pred == null)
+            first = newNode;
+        else
+            pred.next = newNode;
+        pred = newNode;
+    }
+
+    if (succ == null) {
+        last = pred;
+    } else {
+        pred.next = succ;
+        succ.prev = pred;
+    }
+
+    size += numNew;
+    modCount++;
+    return true;
+}
 </pre>
 
 
