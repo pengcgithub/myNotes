@@ -1,30 +1,57 @@
 # Java 运算符 #
 
-- **<< : 左移运算符，num << 1,相当于num乘以2**
+### 位运算符 ###
+
+Java定义了位运算符，应用于整数类型(int)，长整型(long)，短整型(short)，字符型(char)，和字节型(byte)等类型。
+位运算符作用在所有的位上，并且按位运算。假设a = 60，b = 13;它们的二进制格式表示将如下：
 
 <pre>
-
+A = 0011 1100
+B = 0000 1101
+-----------------
+A&b = 0000 1100
+A | B = 0011 1101
+A ^ B = 0011 0001
+~A= 1100 0011
 </pre>
 
+<pre>
+＆	如果相对应位都是1，则结果为1，否则为0	（A＆B），得到12，即0000 1100
+|	如果相对应位都是0，则结果为0，否则为1	（A | B）得到61，即 0011 1101
+^	如果相对应位值相同，则结果为0，否则为1	（A ^ B）得到49，即 0011 0001
+〜	按位补运算符翻转操作数的每一位，即0变成1，1变成0。	（〜A）得到-61，即1100 0011
+</pre>
+
+- **<< : 左移运算符**
+
+<pre>
+<< 	按位左移运算符。左操作数按位左移右操作数指定的位数。	A << 2得到240，即 1111 0000
+</pre>
+
+<pre>
+A << 2
+0011 1100 向左移动2个操作位，变为 1111 0000
+A << 2 = 240
+</pre>
 
 - **>> : 右移运算符，num >> 1,相当于num除以2**
 
 <pre>
-private void grow(int minCapacity) {
-    int oldCapacity = elementData.length;
-    //此处用到的 >> 表示除以二，此段代码即为ArrayList中扩容的方倍法，每次扩容1.5.
-    int newCapacity = oldCapacity + (oldCapacity >> 1);
-    if (newCapacity - minCapacity < 0)
-        newCapacity = minCapacity;
-    if (newCapacity - MAX_ARRAY_SIZE > 0)
-        newCapacity = hugeCapacity(minCapacity);
-    // minCapacity is usually close to size, so this is a win:
-    elementData = Arrays.copyOf(elementData, newCapacity);
-}
+>> 	按位右移运算符。左操作数按位右移右操作数指定的位数。	A >> 2得到15即 1111
+</pre>
+
+<pre>
+A >> 2
+0011 1100 向右移动2个操作位，变为 0000 1111
+A >> 2 = 15
 </pre>
 
 - **>>> : 无符号右移，忽略符号位，空位都以0补齐**
 
 <pre>
+>>> 	按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。	A>>>2得到15即0000 1111
+</pre>
 
+<pre>
+c = a >>> 2;     /* 15 = 0000 1111 */
 </pre>
