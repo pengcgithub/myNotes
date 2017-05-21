@@ -79,6 +79,10 @@ lib中缺少`jsp-api.jar`和`servlet.jar`文件，可以到Tomcat中的lib目录
 
 自定义控制台输出颜色，这样控制台就能比较明显的看到警告或则错误的信息，方便查找问题
 
+- JRebel for Intellij
+
+热部署插件
+
 
 ## 参与者 ##
 
