@@ -44,6 +44,14 @@ cygwin主要是可以复刻Linux下的操作，不仅有利于熟悉Linux的人�
 
 具体选择那些组件可以参考[cygwin安装教程图解](http://blog.csdn.net/xj626852095/article/details/27524937)。如果涉及到git以及vim组件的安装，分别对应选择不同的组件即可。
 
+## 其他 ##
+
+- 如何打开如word文档之类的文件
+
+<pre>
+> cygstart XXX.doc
+</pre>
+
 
 ## 参考资料 ##
 
