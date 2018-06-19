@@ -1,27 +1,21 @@
 # 学习笔记 #
 
-记录自己的学习历程，希望每天都能够进步。
+学习笔记，记录学习总结或则疑难问题等
 
-### java ###
+## 知识点
 
-- String 源码解析
+- java
+- python
+- git
+- vim
+- mysql
+- javascript
+- html
+- linux
+- 编辑器
+- 数据结构
+- 算法
 
-- [ArrayList 分析](./notes/java/Java源码阅读笔记/util/Class/List/ArrayList.md)
-
-
-### python ###
-
-
-### Git ###
-
-
-### Vim ###
-
-
-### DB ###
-
-
-### JavaScript ###
 
 
 
