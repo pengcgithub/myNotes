@@ -11,5 +11,3 @@ cygstart xxx.md
 ## 参考资料 ##
 
 - [Windows下的Linux命令行环境的配置和使用](http://oldratlee.com/post/2012-12-22/stunning-cygwin)
-
-- 

@@ -24,11 +24,11 @@ cygwin主要是可以复刻Linux下的操作，不仅有利于熟悉Linux的人�
 
 上图是需要尤其注意的，毕竟默认提供的所有镜像都是比较慢的，这里不排除选择之后可以下载下来，但是这里最好选择中国区的镜像地址。
 
-手动添加163的x86的地址： http://mirrors.163.com/cygwin/x86/
+cygwin中国镜像地址： http://www.cygwin.cn/pub/
 
-或x64的地址：http://mirrors.163.com/cygwin/x64/
+阿里云镜像：http://mirrors.aliyun.com/cygwin/
 
-上述描述的比较简单，具体可以参考[Cygwin安装时，选择163的源](http://www.crifan.com/cygwin_choose_163_mirror_error_unable_to_get_setup_ini_from_http_mirrors_163_com_cygwin/)。
+上述描述的比较简单，具体可以参考[windows 安装cygwin教程](https://blog.csdn.net/chunleixiahe/article/details/55666792)。
 
 ![](http://i.imgur.com/tX5xfCr.png)
 
